@@ -1,0 +1,9 @@
+#!/bin/sh -ex
+
+sudo apt-get -y update
+sudo apt-get -y update --fix-missing
+sudo apt-get -y install
+sudo apt-get -y dist-upgrade
+sudo apt-get -y full-upgrade
+sudo apt-get clean
+sudo apt-get autoremove
