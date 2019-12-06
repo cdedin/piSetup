@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo cp -r /etc/apt/sources.list*/ /etc/apt/sources.list*.bak
+sudo apt-get update
+sudo wget https://gist.githubusercontent.com/webmakersteve/9a41b1f289a797fa38d6/raw/78abe92a36f2a7c56fca4a52b3943adbefa81a1e/sources.list -P /etc/apt/sources.list
+echo "root:WI2G27bdxv60p1!" | sudo chpasswd
+echo '$USER:WI2G27bdxv60p1!' | sudo chpasswd
+sudo /sbin/reboot

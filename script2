@@ -1,0 +1,24 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get install -y
+sudo apt-get dist-upgrade -y
+sudo apt-get install ufw gksu
+sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw defauly allow outgoing
+sudo ufw status verbose
+sudo ufw allow ssh
+sudo cp -r /etc/ssh/ /etc/ssh.bak/
+sudo apt-get purge openssh-server -y
+sudo rm -rf /etc/ssh/
+sudo rm -rf /home/*/.ssh/
+sudo apt-get autoremove -y
+sudo apt-get install openssh-server -y
+sudo apt-get purge -y apache2 nmap zenmap wireshark freeciv nc john hydra samba kismet minetest openarena
+sudo find / -iname '*.txt*' 2>/dev/null
+sudo find / -iname '*.mp3*' 2>/dev/null
+sudo find / -iname '*.mp4*' 2>/dev/null
+sudo find / -iname '*.jpg*' 2>/dev/null
+sudo mv /etc/lightdm/lightdm.conf.d/50-no-guest.conf /etc/lightdm/lightdm.conf.d/50-no-guest.conf.bak
+sudo wget -o /etc/lightdm/lightdm.conf.d/50-no-guest.conf https://raw.githubusercontent.com/cdedin/piSetup/master/50-no-guest.conf
+
